@@ -29,24 +29,29 @@
       circle-color: '#826260'
       circle-opacity: 0.8
 
-- title: Polygon Layer
-  # center: [-73.96778, 40.78376]
-  center: [-74.00739, 40.67930]
+- title: Section Title - Squirrels in Central Park
+  center: [-73.96778, 40.78376]
   zoom: 14
   pitch: 0
   bearing: 20
-  description: Now we zoom to a new location. And add a polygon layer of the innundation zone from Hurricane Sandy via GeoJSON endpoint. Layer paint properties are passed (notice they are different from the syntax for the point layer). 
+  description: Now we zoom in. A layer is added from a geojson  Layer paint properties are passed, and layers are set to turn off when you continue scrolling via the `persist:false` attribute.
+  
   layers:
-  - id: 'sandy'
-    url: 'https://data.cityofnewyork.us/resource/5xsi-dfpx.geojson'
-    type: 'fill'
+  # id of layer
+  - id: 'squirrel-census'
+  # path to dataset 
+  # note anything uploaded in the public/data folder will be uploaded to your site at url/data/file.png
+    url: './data/squirrel20241021.geojson'
+  # type of symbol
+    type: 'circle'
+  # type of symbol
     data-type: 'geojson'
-    layer-type: 'fill'
-    persist: false
+    layer-type: 'circle'
+    persist: true
     paint:
-      fill-color: '#c1e2e6'
-      fill-opacity: 0.8
-
+      circle-radius: 5
+      circle-color: '#826260'
+      circle-opacity: 0.8
 
 
 - title: London
